@@ -1,0 +1,14 @@
+
+
+{
+    "student":[
+            {"id":1 ,"name":"Raj","email":"raj@gmail.com", "year":23, "fee":12000},
+            {"id":2,"name":"rup","email":"raj@gmail.com", "year":23, "fee":12000},
+            {"id":3,"name":"Riya","email":"raj@gmail.com", "year":23, "fee":12000},
+            {"id":4,"name":"Avi","email":"raj@gmail.com", "year":23, "fee":12000}
+            ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }
