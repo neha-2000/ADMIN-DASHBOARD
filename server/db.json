@@ -1,14 +1,63 @@
-
-
 {
-    "student":[
-            {"id":1 ,"name":"Raj","email":"raj@gmail.com", "year":23, "fee":12000},
-            {"id":2,"name":"rup","email":"raj@gmail.com", "year":23, "fee":12000},
-            {"id":3,"name":"Riya","email":"raj@gmail.com", "year":23, "fee":12000},
-            {"id":4,"name":"Avi","email":"raj@gmail.com", "year":23, "fee":12000}
-            ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "student": [
+    {
+      "id": 3,
+      "name": "Riya",
+      "email": "raj@gmail.com",
+      "year": 23,
+      "fee": 12000
+    },
+    {
+      "id": 4,
+      "name": "Avi",
+      "email": "raj@gmail.com",
+      "year": 23,
+      "fee": 12000
+    },
+    {
+      "name": "pallavi",
+      "email": "pallu@gmail.com",
+      "year": "1234",
+      "fee": "455667",
+      "id": 6
+    },
+    {
+      "name": "nhali bhalerao",
+      "email": "bhaleraonehali7@gmail.com",
+      "year": "1999",
+      "fee": "456788",
+      "id": 7
+    },
+    {
+      "name": "Riya123",
+      "email": "Riya@gmail.com",
+      "year": "12345",
+      "fee": "30000",
+      "id": 8
+    },
+    {
+      "name": "ramsha",
+      "email": "ramsha@gmail.com",
+      "id": 9,
+      "year": "1999",
+      "fee": "2345"
+    },
+    {
+      "email": "akshaypgawade777@gmail.com",
+      "name": "akshay",
+      "year": "1999",
+      "fee": "45000",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}

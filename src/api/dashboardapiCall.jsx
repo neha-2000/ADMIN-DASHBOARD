@@ -11,8 +11,12 @@ const DashboardapiCall=()=> {
     if(error) return <p>Error</p>
     console.log(data)
 
+    
+
     return {refetch,data};
     
 }
+
+
 
 export default DashboardapiCall
