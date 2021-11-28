@@ -23,6 +23,8 @@ body{
   padding: 30px 20px;
   font-family: 'Open Sans', sans-serif;
   transition: width.2s ease-in;
+  box-shadow: 0 5px 8px 0 #00000033, 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .side-menu.inactive{
