@@ -5,6 +5,7 @@ import DashboardapiCall from '../api/dashboardapiCall'
 import axios from 'axios'
 import { Line } from 'chart.js'
 import Materialtable from './Materialtable'
+import Vendor from './Vendors/Vendor'
 
 const empList = [
   {
@@ -88,7 +89,9 @@ function Dashboard() {
 
   return (
     <div>
-      <Materialtable/>
+      <Vendor/>
+      {/* <Materialtable/>
+       */}
       
        
       <MaterialTable

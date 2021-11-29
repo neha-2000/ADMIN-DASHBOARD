@@ -8,17 +8,8 @@
       "fee": 12000,
       "city": "pune",
       "VendorName": "raj",
-      "payment": "5000"
-    },
-    {
-      "id": 4,
-      "name": "Avi",
-      "email": "raj@gmail.com",
-      "phone": "12345",
-      "VendorName": "raju",
-      "year": 2000,
-      "fee": 12000,
-      "payment": "34"
+      "payment": "5000",
+      "activate": "true"
     },
     {
       "name": "pallavi",
@@ -50,7 +41,8 @@
       "city": "pune",
       "id": 8,
       "VendorName": "riya",
-      "payment": "800000"
+      "payment": "800000",
+      "activate": true
     },
     {
       "name": "ramsha",
@@ -98,5 +90,6 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "Vendor": []
 }

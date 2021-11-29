@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import MaterialTable from 'material-table'
 import { Checkbox, Select, MenuItem } from '@material-ui/core'
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import axios from 'axios';
-
+import {CsvBuilder} from 'filefy'
 const url = 'http://localhost:3000/student';
 
 // const empList = [
@@ -41,18 +42,34 @@ function Materialtable() {
   const [empList, setEmpList] = useState([])
   
   const [filteredData, setFilteredData] = useState(empList);
+  const [selectedRows,setSelectedRows]=useState([]);
   const columns = ([
+    { title: 'Id', field: 'id', validate: rowData => rowData.id === undefined || rowData.id === "" ? "Required" : true },
     { title: 'VendorName', field: 'VendorName', validate: rowData => rowData.VendorName === undefined || rowData.VendorName === "" ? "Required" : true },
     { title: 'Email', field: 'email', validate: rowData => rowData.email === undefined || rowData.email === "" ? "Required" : true },
     { title: 'city', field: 'city', validate: rowData => rowData.city === undefined || rowData.city === "" ? "Required" : true },
     { title: 'payment', field: 'payment', validate: rowData => rowData.payment === undefined || rowData.payment === "" ? "Required" : true },
-    { title: 'year', field: 'year', validate: rowData => rowData.year === undefined || rowData.year === "" ? "Required" : true },
-
+    { title: 'year', field: 'year', validate: rowData => rowData.year === undefined || rowData.year === "" ? "Required" : true }
   ])
   // console.log(filteredData)
 
   const handleChange = () => {
     setFilter(!filter)
+  }
+
+  const handleBulkdelete=()=>{
+    const updateData=empList.filter(row=>!selectedRows.includes(row))
+    setEmpList(updateData)
+
+  }
+ 
+  const exportAllSelectedRows=()=>{
+    var csvBuilder = new CsvBuilder("user_list.csv")
+  .setColumns(columns.map((col)=>(col.title)))
+  .addRows([
+    selectedRows.map(rowData => columns.map(col=>rowData[col.field]))
+  ])
+  .exportFile();
   }
 
   const getData = () => {
@@ -87,10 +104,12 @@ function Materialtable() {
         title="Employee Data"
         data={filteredData}
         columns={columns}
+        onSelectionChange={(rows)=>setSelectedRows(rows)}
         options={{
           filtering: filter,
           actionsColumnIndex: -1,
-          addRowPosition: "first"
+          addRowPosition: "first",
+          selection: true
 
         }}
         editable={{
@@ -135,6 +154,18 @@ function Materialtable() {
           })
         }}
         actions={[
+
+          {
+            icon: 'delete',
+            tooltip:"Delete all seleted Rows",
+            onclick:()=> handleBulkdelete()
+          }
+          ,
+          {
+            icon:()=><CloudDownloadIcon/>,
+            tooltip:"Export all seleted data",
+            onClick:()=>exportAllSelectedRows()
+          },
           {
             icon: () => <Checkbox
               checked={filter}

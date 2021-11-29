@@ -5,6 +5,10 @@ import {BrowserRouter as Router,Switch,Route } from 'react-router-dom'
 import Dashboard from './MyComponents/Dashboard'
 import {Row,Col} from 'reactstrap';
 import Topbar from './MyComponents/Topbar';
+import Vendor from './MyComponents/Vendors/Vendor';
+
+
+
 
 const Content=()=>{
   return <h1>Content</h1>
@@ -47,6 +51,10 @@ function App() {
         <Route  path={"/content/courses"}>
           <Courses/>
         </Route>
+        <Route exact path="/customers" />
+        <Route path={"/customers/vendor"} component={Vendor}/>
+
+          
         <Route  path={"/design"}>
           <Design/>
         </Route>
