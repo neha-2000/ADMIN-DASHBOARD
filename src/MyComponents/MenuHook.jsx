@@ -9,19 +9,10 @@ const MenuHook = () => {
       iconClassName: 'bi bi-clipboard-data'
     },
     {
-      name: 'Sales', to: '/content',
+      name: 'Orders', to: '/orders',
       exact: true,
       iconClassName: 'bi bi-cart2',
-      submenu: [
-        {
-          name: "courses",
-          to: '/content/courses'
-        },
-        {
-          name: "videos",
-          to: '/content/videos'
-        }]
-    },
+     } ,
     {
       name: 'Customers', to: '/customers',
       exact:true,

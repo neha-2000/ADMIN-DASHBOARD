@@ -3,7 +3,7 @@ import MaterialTable from 'material-table'
 import { Checkbox, Select, MenuItem } from '@material-ui/core'
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import axios from 'axios';
-
+import {Typography } from '@material-ui/core';
 import VendorsHook from './VendorsHook';
 
 
@@ -36,8 +36,12 @@ function Vendor() {
 
     return (
         <div>
+             <Typography variant="h4" color="primary" style={{ padding: "10px" }}>
+             Vendors Data
+          </Typography>
             <MaterialTable
-                title="Vendors Data"
+                style={{marginTop: "10px" }}
+               title="Check here"
                 data={filteredData}
                 columns={columns}
                 onSelectionChange={(rows) => setSelectedRows(rows)}

@@ -6,6 +6,7 @@ import Dashboard from './MyComponents/Dashboard'
 import {Row,Col} from 'reactstrap';
 import Topbar from './MyComponents/Topbar';
 import Vendor from './MyComponents/Vendors/Vendor';
+import Orders from './MyComponents/Orders/Orders';
 
 
 
@@ -38,12 +39,14 @@ function App() {
         setInactive(inactive);
       }}/>
 
-      
+      <div>
+
+        <Topbar/>
      
       <div className={`container ${inactive ? 'inactive' : ""}`}>
       <Switch>
         <Route exact path='/' component={Dashboard}/>
-        <Route exact path="/content" component={Content}/>
+        <Route exact path="/orders" component={Orders}/>
           
         <Route  path={"/content/videos"}>
           <Videos/>
@@ -60,6 +63,8 @@ function App() {
         </Route>
       </Switch>
    </div>
+   </div>
+   <h1>hhey</h1>
   </Router>
 </div>
   );

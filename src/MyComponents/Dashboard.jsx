@@ -6,6 +6,7 @@ import axios from 'axios'
 import { Line } from 'chart.js'
 import Materialtable from './Materialtable'
 import Vendor from './Vendors/Vendor'
+import Topbar from './Topbar'
 
 const empList = [
   {
@@ -89,6 +90,7 @@ function Dashboard() {
 
   return (
     <div>
+      <Topbar/>
       <Vendor/>
       {/* <Materialtable/>
        */}
