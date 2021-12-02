@@ -18,7 +18,7 @@ function Topbar() {
                
                 
             }}>
-                <AppBar position="fixed" variant="contained"  style={{backgroundColor:"blueviolet", color:"whitesmoke"}}>
+                <AppBar position="fixed" variant="contained"  style={{backgroundColor:"#2391F9", color:"whitesmoke"}}>
                     <Toolbar>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             Smaan

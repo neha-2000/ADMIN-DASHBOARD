@@ -7,11 +7,11 @@ import {Typography } from '@material-ui/core';
 import VendorsHook from './VendorsHook';
 
 
-const user=[
-    {name:"nehali",id:"1",age:"22"},
-    {name:"pallu",id:"2",age:"16"},
-    {name:"nehali",id:"3",age:"23"},
-]
+// const user=[
+//     {name:"nehali",id:"1",age:"22"},
+//     {name:"pallu",id:"2",age:"16"},
+//     {name:"nehali",id:"3",age:"23"},
+// ]
 
 function getUniqueCitys(arr,comp){
     const unique=arr
@@ -32,8 +32,11 @@ function Vendor() {
         getData()
         console.log("Unique",uniqueCity)
         setFilteredData(city === 'all' ? vendorList : vendorList.filter(dt => dt.city === city))
-    }, [year, city])
+    }, [ city])
 
+    const downloadExcel=()=>{
+
+    }
     return (
         <div>
              <Typography variant="h4" color="primary" style={{ padding: "10px" }}>
@@ -46,10 +49,11 @@ function Vendor() {
                 columns={columns}
                 onSelectionChange={(rows) => setSelectedRows(rows)}
                 options={{
-                    filtering: filter,
+                    // filtering: filter,
                     actionsColumnIndex: -1,
                     addRowPosition: "first",
-                    selection: true
+                    // selection: true
+                    columnsButton:true
 
                 }}
                 editable={{
@@ -96,25 +100,32 @@ function Vendor() {
                 actions={[
 
                     {
-                        icon: 'delete',
-                        tooltip: "Delete all seleted Rows",
-                        onclick: () => handleBulkdelete()
-                    }
-                    ,
-                    {
-                        icon: () => <CloudDownloadIcon />,
-                        tooltip: "Export all seleted data",
-                        onClick: () => exportAllSelectedRows()
-                    },
-                    {
-                        icon: () => <Checkbox
-                            checked={filter}
-                            onChange={handleChange}
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />,
-                        tooltip: "Hide/Show Filter option",
+                        icon: ()=> <CloudDownloadIcon />,
+                        tooltip: "Export to Excel",
+                        onClick:()=>downloadExcel(),
                         isFreeAction: true
                     },
+
+                    // {
+                    //     icon: 'delete',
+                    //     tooltip: "Delete all seleted Rows",
+                    //     onclick: () => handleBulkdelete()
+                    // }
+                    // ,
+                    // {
+                        // icon: () => <CloudDownloadIcon />,
+                        // tooltip: "Export all seleted data",
+                        // onClick: () => exportAllSelectedRows()
+                    // },
+                    // {
+                    //     icon: () => <Checkbox
+                    //         checked={filter}
+                    //         onChange={handleChange}
+                    //         inputProps={{ 'aria-label': 'primary checkbox' }}
+                      //  />,
+                        // tooltip: "Hide/Show Filter option",
+                        // isFreeAction: true
+                    // },
                     {
                         icon: () => <Select
                             labelId="demo-simple-select-label"

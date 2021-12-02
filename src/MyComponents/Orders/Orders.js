@@ -73,11 +73,12 @@ function Orders() {
 
     // }
 
-        useEffect(() => {
+        useEffect((e) => {
             getData()
+           
             console.log("Unique",uniqueCity)
             setFilteredData(city === 'all' ? ordersList : ordersList.filter(dt => dt.city === city))
-           
+            
         }, [city])
 
     return (
@@ -114,13 +115,10 @@ function Orders() {
                                         </Grid>
                                         <Grid xs={12} sm={6} item>
                                             <TextField placeholder="Enter Email" label="Enter Email" value={customer} onChange={(e) => { Setcustomer(e.target.value) }} variant="outlined" fullWidth required />
-                                        </Grid>
-                                        
-                                        
+                                        </Grid>                                                                              
                                         <Grid item xs={12}>
                                             <Button type="submit" onClick={sendData} variant="contained" color="primary" fullWidth>Submit</Button>
                                         </Grid>
-
                                     </Grid>
                                 </form>
                             </CardContent>
@@ -133,8 +131,7 @@ function Orders() {
                 data={filteredData}
                 columns={columns}
                 onSelectionChange={(rows) => setSelectedRows(rows)}
-                options={{
-                    
+                options={{                    
                     actionsColumnIndex: -1,
                     addRowPosition: "first",
                     selection: true

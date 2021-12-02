@@ -7,6 +7,8 @@ import { Line } from 'chart.js'
 import Materialtable from './Materialtable'
 import Vendor from './Vendors/Vendor'
 import Topbar from './Topbar'
+import Home from './HomePage/Home'
+import Datagrids from './DataGrids/Datagrids'
 
 const empList = [
   {
@@ -38,9 +40,6 @@ const empList = [
     "id": 6
   },
   
-  
-
-
 ]
 
 function Dashboard() {
@@ -85,17 +84,24 @@ function Dashboard() {
     // console.log("data2",data2)
   }, [])
 
-
+  const mystyle = {
+    background: '#21313C',
+    border: 'none',
+    borderRadius: '2px',
+    boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)'
+  };
   
 
   return (
     <div>
       <Topbar/>
-      <Vendor/>
+      <Home/>
+     
+        <iframe style={mystyle} width="500" height="400" src="https://charts.mongodb.com/charts-admin-portal-dnxig/embed/charts?id=d00f2ffe-c402-44cc-a32c-9c30af6ddcdb&maxDataAge=3600&theme=dark&autoRefresh=false"></iframe>
+       <Datagrids/>
+        <Vendor/>
       {/* <Materialtable/>
        */}
-      
-       
       <MaterialTable
         title="Customer Roles"
         columns={columns}

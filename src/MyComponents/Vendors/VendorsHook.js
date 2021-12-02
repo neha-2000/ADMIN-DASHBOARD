@@ -60,8 +60,7 @@ function VendorsHook() {
                 // always executed
             });
     }
-
-    
+        
 
     return {url,columns,handleChange,getData,handleBulkdelete,exportAllSelectedRows,year,city,setCity,filter,setFilteredData, vendorList,filteredData,selectedRows,setSelectedRows}
 }

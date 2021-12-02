@@ -34,7 +34,9 @@ function OrdersHook() {
 
     }
 
-    const exportAllSelectedRows = () => {
+    const exportAllSelectedRows = (e) => {
+        e.preventDefault();
+       
         var csvBuilder = new CsvBuilder("user_list.csv")
             .setColumns(columns.map((col) => (col.title)))
             .addRows([
